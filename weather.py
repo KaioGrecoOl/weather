@@ -1,6 +1,7 @@
 import requests
 import json
-from PIL import Image, ImageFont, ImageDraw 
+from PIL import Image, ImageFont, ImageDraw
+from datetime import date 
 
 api_key = "9d0500XXXXXXXXXXXXXXX"
 
@@ -20,4 +21,12 @@ color = 'rgb(255, 255, 255)'
 (x, y) = (55,50)
 draw.text((x, y), content, color, font=font)
 
+font = ImageFont.truetype('Inter.ttf', size=30)
+today = date.today()
+content = date.today().strftime("%A - %B %d, %Y")
+color = 'rgb(255, 255, 255)'
+(x, y) = (55,145)
+draw.text((x, y), content, color, font=font)
+
+image.show()
 image.save("test.png")
